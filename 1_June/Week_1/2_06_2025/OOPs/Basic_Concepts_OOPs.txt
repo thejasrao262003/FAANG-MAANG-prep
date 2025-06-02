@@ -1,0 +1,41 @@
+Object Oriented Programming in C++
+
+- Class:
+    - This is the building block of OOP in C++.
+    - It is a user-defined data type that act as a blueprint representing a group of objects which share some common properties and behaviours
+    - These are stored as data members and the behaviour is represented by member functions
+    - Ex: If we consider Animal to be a class, it could have some data members such as name, age and species.
+        - It could have member functions such as walk, run, sleep etc
+
+- Object:
+    - In C++, an object is an instance of a class.
+    For example: the Animal class is just a concept or category. But a black cat named Shadow is actual animal that exists.
+    So in this case Shadow is an object
+
+Note: When a class is defined, no memory is allocated but when it is instantiated (i.e an object is created), memory is allocated.
+
+- Encapsulation:
+    - Encapsulation is defined as wrapping up data and information under a single unit.
+    - In OOPs, Encapsulation is defined as binding together the data and the functions that manipulate them together in a class.
+    For example: If we consider Animal class, the data members species, age and name are encapsulated with member functions like eat(), sleep() etc.
+    - These can be protected by the access specifier which hides the data of the class from outside.
+
+- Abstraction:
+    - Abstraction means displaying only essential information and ignoring the other details or implementation.
+    - In our case if we have to call a method called makeSound(), we don't need to know how the sound is produced by the animal internally
+
+- Polymorphism:
+    - We can define polymorphism as the ability of an entity to behave differently in different scenarios.
+    For example: makeSound() method, the output will vary depending on the type of animal
+
+    In C++, polymorphism can be of three types:
+        - Operator Overloading: The process of making an operator exhibit different behaviours in different instances.
+        - Function Overloading: Using a single function name to perform different types of tasks (like changing parameters, number of parameters, return type etc)
+        - Function Overriding: Changing the behaviour of a function that is derived from the base class using inheritance.
+
+- Inheritance:
+    - The capability of a class to derive properties and characteristics from another class is called Inheritance.
+        - Sub class: The class that inherits properties from another class is called sub class or Derived class.
+        - Super class: The class whose properties are inherited by a sub-class is called Base Class or Superclass.
+    - This supports the concept of "reusability", i.e when we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.
+    Example: Dog, Cat, Cow can be Derived Class of Animal Base Class

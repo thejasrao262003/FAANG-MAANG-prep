@@ -1,0 +1,31 @@
+Revising SOLID principles
+
+S - Single Responsibility
+O - Open/Closed Principle
+L - Liskov's substitution
+I - Interface Segregation Principle
+D - Dependency Inversion
+
+These are the 5 essential design principles that enhance software design making the code more sustainable and scalable.
+
+1. Single Responsibility Principle:
+    - This principle states that "A class should have only one reason to change". 
+    - This means every class should have only one responsibility or single job or single purpose.
+    Example:
+        - Imagine a baker who is responsible for baking bread. His responsibility is to bake good quality bread.
+        - If the same baker has to manage inventory, accounts etc, then the baker can't do any of the tasks well.
+        - So here to make it simpler, each responsibility should be allocated to different individuals who are expertised in that field.
+        Note: Refer to single_responsibility_principle.cpp file for code example for the same. The explanation is as follows:
+            - BreadBaker Class: Responsible solely for baking bread. This class focuses on ensuring the quality and standards of the bread without being burdened by other tasks.
+            - InventoryManager Class: Handles inventory management, ensuring that the bakery has the right ingredients and supplies available.
+            - SupplyOrder Class: Manages ordering supplies, ensuring that the bakery is stocked with necessary items.
+            - CustomerService Class: Takes care of serving customers, providing a focused approach to customer interactions.
+            - BakeryCleaner Class: Responsible for cleaning the bakery, ensuring a hygienic environment.
+
+2. Open/Closed Principle:
+    - This principle states that "Software entitites should be open for extension, but closed for modification.
+    - Example: Imagine if you have a class called PaymentProcessor that processes payments for an online store. Initially the PaymentProcessor only supports payments through credit cards.
+        - However, you want to extend its functionality to also support processing payments using UPI
+        - Instead of modifying the existing PaymentProcessor class to add UPI support, you can create a new class called UPIPaymentProcessor that extends the PaymentProcessor class.
+        - This way PaymentProcessor class remains closed for modification but open for extension.
+        Note: 
