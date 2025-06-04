@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/tejas/FAANG_MAANG_PREP/1_June/Week_1/2_06_2025/SOLID_PRINCIPLES",
+      "program": "/Users/tejas/FAANG_MAANG_PREP/1_June/Week_1/2_06_2025/SOLID_PRINCIPLES/build/Debug/outDebug"
+    }
+  ]
+}

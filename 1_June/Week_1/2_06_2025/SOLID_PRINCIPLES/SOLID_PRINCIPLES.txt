@@ -28,4 +28,48 @@ These are the 5 essential design principles that enhance software design making 
         - However, you want to extend its functionality to also support processing payments using UPI
         - Instead of modifying the existing PaymentProcessor class to add UPI support, you can create a new class called UPIPaymentProcessor that extends the PaymentProcessor class.
         - This way PaymentProcessor class remains closed for modification but open for extension.
-        Note: 
+        Note: refer to open_closed_principle.cpp file for code example for the same. The explanation is as follows:
+            - Base Class (PaymentProcessor): This is an abstract base class with a pure virtual function processPayment(). It defines a common interface for all payment processors.
+            - CreditCardPaymentProcessor: This class implements the payment processing logic for credit card payments.
+            - PayPalPaymentProcessor: This new class extends the functionality by implementing the payment processing for PayPal payments.
+            - Main Function: The processPayment function takes a pointer to a PaymentProcessor and calls the processPayment() method. This allows you to use any processor that implements the PaymentProcessor interface without changing existing code.
+
+3. Liskov's substitution principle:
+    - According to this principle, the child class must be substitutable for their base or parent classes. 
+    - This principle expects that the child class should be usable in place of the parent class without causing any unexpected behaviour
+    Example: So both Rectangle and Square can be separate child classes of a common Shape class.
+        - So we can define a common interface (like area()) in Shape and let each subclass implement it as needed.
+        - So this way, we avoid unexpected behavior and follow the Liskov Substitution Principle correctly.
+        Note: refer to liskovs_substitution_principle.cpp file for code example for the same. The explanation is as follows:
+            - Base Class (Shape): This is an abstract base class with a pure virtual function area(). It defines a common interface for all shape types.
+            - Rectangle Class: This class inherits from Shape and implements the area() method using independent width and height values.
+            - Square Class: This class also inherits from Shape, but implements the area() method using a single size value, maintaining equal sides.
+            - Main Function: The program uses pointers or references to the base Shape class, allowing both Rectangle and Square objects to be used interchangeably without altering expected behavior — fully satisfying the Liskov Substitution Principle.
+
+
+4. Interface Segregation Principle:
+    - This principle is first principle that applies to interface instead of classes in SOLID and it is similar to single responsibility principle. 
+    - It states that "do not force any client to implement an interface which is irrelevant to them". 
+    - Here your main goal is to focus on avoiding fat interface and give preference to many small client-specific interfaces. 
+    - You should prefer many client interfaces rather than one general interface and each interface should have a specific responsibility.
+    Example: If you go into a restaurant and you are a vegetarian, the waiter in that restaurant gave you the menu card which includes vegetarian items, non-vegetarian items, drinks, and sweets. 
+    - In this case, as a customer, you should have a menu card which includes only vegetarian items, not everything which you don't eat in your food. Here the menu should be different for different types of customers.
+    - The common or general menu card for everyone can be divided into multiple cards instead of just one. Using this principle helps in reducing the side effects and frequency of required changes.
+    Note: refer to interface_segregation_principle.cpp file for code example for the same. The explanation is as follows:
+        - IVegetarianMenu Interface: This interface defines a method to get vegetarian items. It ensures that only classes implementing vegetarian menus will need to provide this functionality.
+        - INonVegetarianMenu Interface: Similar to the vegetarian interface, this one defines a method for getting non-vegetarian items.
+        - IDrinkMenu Interface: This interface defines a method for getting drink items, keeping it separate from food items.
+        - VegetarianMenu Class: Implements the IVegetarianMenu interface and provides a list of vegetarian items.
+        - NonVegetarianMenu Class: Implements the INonVegetarianMenu interface and provides a list of non-vegetarian items.
+        - DrinkMenu Class: Implements the IDrinkMenu interface and provides a list of drink items.
+
+5. Dependency Inversion Principle:
+    - This principle states that "High level modules should not depend on low level modules. Both should depend on abstractions".
+    - Additionally, abstractions should not depend on details. Details should depend on abstractions.
+    - In simpler terms, the DIP suggests that classes should rely on abstractions (e.g., interfaces or abstract classes) rather than concrete implementations.
+    - This allows for more flexible and decoupled code, making it easier to change implementations without affecting other parts of the codebase.
+    - Example: In a software development team, developers depend on an abstract version control system (e.g., Git) to manage and track changes to the codebase. They don't depend on specific details of how Git works internally. 
+    Note: refer to dependency_inversion_principle.cpp file for code example for the same. The explanation is as follows:
+        - IVersionControl Interface: This defines the operations that any version control system should support, like commit, push, and pull. It serves as an abstraction that decouples high-level code from low-level implementations.
+        - GitVersionControl Class: This class implements the IVersionControl interface, providing specific functionality for managing version control using Git.
+        - DevelopmentTeam Class: This class relies on the IVersionControl interface, meaning it can work with any version control implementation that adheres to the interface. It does not need to know the details of how Git works internally.
